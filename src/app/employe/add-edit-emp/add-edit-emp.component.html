@@ -1,0 +1,15 @@
+<div class="form froup row">
+    <label class="col-sm-2 col-form-label" for="">department name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="employee_name" placeholder="enter your employe name">
+        <input type="text" class="form-control" [(ngModel)]="employee_departmen" placeholder="enter your department name">
+        <input type="text" class="form-control" [(ngModel)]="date_of_joining" placeholder="enter your date of joining">
+       
+
+        
+        
+    </div>
+    <button class=" btn btn-primary" (click)="addEmp()" *ngIf="emp.id==0" >Add</button>
+    <button class="btn btn-primary" *ngIf="emp.id!=0"  (click)="updateemp()" >update</button>
+
+</div>

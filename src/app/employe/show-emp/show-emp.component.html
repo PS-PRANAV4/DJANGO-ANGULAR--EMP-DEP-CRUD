@@ -1,0 +1,69 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="mt-5 btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"
+(click)="addClick()"
+data-backdrop="static" data-keyboard="false">
+    Add Field
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeClick()"
+          data-backdrop="static" data-keyboard="false"></button>
+        </div>
+        <div class="modal-body">
+            <app-add-edit-emp [emp]="emp" *ngIf="ActivateAddEditDepComp"></app-add-edit-emp>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>employee Name</th>
+            <th>employee Department</th>
+            <th>Date of joinin</th>
+            <th>options</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let datas of  eployeeList
+        ">
+            <td>{{datas.id}}</td>
+            <td>{{datas.employee_name}}</td>
+            <td>{{datas.employee_departmen}}</td>
+            <td> {{datas.date_of_joining}} </td>
+            <td>
+                <button type="button" class="btn btn-light mr-1 " data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editClick(datas)" data-backdrop="static" data-keyboard="false" >Edit</button>
+            </td>
+            <td>
+                <button (click)="deleteEmp(datas.id)" type="button" class="btn btn-light mr-1 ">Delete</button>
+            </td>
+        </tr>
+        
+    </tbody>
+
+</table>
